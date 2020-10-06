@@ -14,9 +14,8 @@ article header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #f4f1ec;
-  background-image: none;
   margin-top: 10px;
+  font-size: 20px;
 }
 
 article header .name {
@@ -41,9 +40,8 @@ footer {
 }
 
 article div {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: .5em;
-  font-size: .9em;
 }
 
 article:hover {
