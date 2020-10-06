@@ -1,0 +1,40 @@
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  display: flex;
+  justify-content: center; 
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 40px;
+  border-bottom: 2px solid #545149;
+}
+
+form button {
+  font-family: Bungee;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  margin-top: 10px
+}
+
+form button:hover {
+  font-family: Bungee;
+  color: #4056A1;
+  background-color: #FFFFFF;
+}
+
+.counter {
+  display: flex;
+  justify-content: flex-end;
+  font-family: Bungee;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
