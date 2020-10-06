@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#tweet-text').on('keydown', function() {
+  $('#tweet-text').on('keyup', function() {
     let charLength = $(this).val().length;
     if (charLength > 140) {
       $(this).siblings().children('.counter').text(`${-(charLength - 140)}`).addClass('negative');

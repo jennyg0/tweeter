@@ -6,6 +6,7 @@ body > header {
   background-color: #006aeb;
   background-image: url("https://www.transparenttextures.com/patterns/knitted-sweater.png");
   font-size: 30px;
-  height: 400px;
+  height: 520px;
   width: 100%;
+  padding-top: 120px;
 }

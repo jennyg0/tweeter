@@ -4,10 +4,11 @@ nav {
   align-content: flex-end;
   box-sizing: border-box;
   background-color: #4056A1;
-  font-size: 24px;
   color: #FFFFFF;
   height: 120px;
+  width: 100%;
   padding: 1.5em;
+  position: fixed;
 }
 
 .title {
