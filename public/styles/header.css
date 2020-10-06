@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  background-color: #006aeb;
+  background-image: url("https://www.transparenttextures.com/patterns/knitted-sweater.png");
+  font-size: 30px;
+  height: 400px;
+  width: 100%;
+}
