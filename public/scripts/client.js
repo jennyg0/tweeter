@@ -5,7 +5,16 @@
  */
 
 $(document).ready(function() {
+  const loadTweets = function () {
+    $.ajax({
+      url: "/tweets",
+      method: "GET"
+    }) .then ((tweets) => {
+      renderTweets(tweets);
+    })
+  };
   
+  loadTweets();
 
   $('form').submit(function(event) {
     event.preventDefault();
@@ -15,23 +24,24 @@ $(document).ready(function() {
      } else if (tweetLength === 0) {
       alert("You need to type something to tweet!");
      } else {
-    $.ajax({
+       const data = $(this).serialize();
+      $.ajax({
       url: "/tweets",
       method: "POST",
-      data: $(this).serialize()
+      data 
+      }).then(function(data) {
+        // $('tweet-text').replaceWith(loadTweets())
+        loadTweets();
       })
-      .then(() => {
-      console.log($(this).serialize());
-      })
-      }
-    
+    }
     })
   
 
  const renderTweets = function(tweets) {
+  $('#tweets-container').html("");
   for (const tweet of tweets) {
     const $output = createTweetElement(tweet)
-    $('#tweets-container').append($output);
+    $('#tweets-container').prepend($output);
   }
  };
 
@@ -58,16 +68,6 @@ $(document).ready(function() {
  const timeStamp = function(time) {
    return Date(time);
  }
- const loadTweets = function () {
-  $.ajax({
-    url: "/tweets",
-    method: "GET"
-  }) .then ((tweets) => {
-    renderTweets(tweets);
-  })
-};
-
- loadTweets();
 
 });
 
