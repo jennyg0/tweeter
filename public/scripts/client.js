@@ -9,14 +9,24 @@ $(document).ready(function() {
 
   $('form').submit(function(event) {
     event.preventDefault();
-  $.ajax({
-    url: "/tweets",
-    method: "POST",
-    data: $(this).serialize()
-  }).then(() => {
-    console.log($(this).serialize());
-  })
-  });
+    const tweetLength = $('#tweet-text').val().length
+      if (tweetLength > 140) {
+      alert("This tweet is too long!");
+     } else if (tweetLength === 0) {
+      alert("You need to type something to tweet!");
+     } else {
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: $(this).serialize()
+      })
+      .then(() => {
+      console.log($(this).serialize());
+      })
+      }
+    
+    })
+  
 
  const renderTweets = function(tweets) {
   for (const tweet of tweets) {
@@ -58,6 +68,6 @@ $(document).ready(function() {
 };
 
  loadTweets();
- //renderTweets(data);
+
 });
 
