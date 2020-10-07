@@ -5,6 +5,20 @@
  */
 
 $(document).ready(function() {
+  
+
+  $('form').submit(function(event) {
+    event.preventDefault();
+  $.ajax({
+    url: "/tweets",
+    method: "POST",
+    data: $(this).serialize()
+  }).then(() => {
+    console.log($(this).serialize());
+  })
+  });
+
+  
 const data = [
   {
     "user": {
@@ -30,12 +44,9 @@ const data = [
   }
 ]
 
- const renderTweets = function(tweets) {
-  for (const tweet of tweets) {
-    const $output = createTweetElement(tweet)
-    $('#tweets-container').append($output);
-  }
- };
+
+  
+
 
  const createTweetElement = function(tweet) {
   const $tweet = $(`<article>
@@ -46,7 +57,7 @@ const data = [
                     </header>
                     <div>${tweet.content.text}</div>
                     <footer>
-                      <span>${tweet.created_at}</span>
+                      <span> ${timeStamp(tweet.created_at)}</span>
                       <span>
                         <i class="fas fa-flag"></i>
                         <i class="fas fa-retweet"></i>
@@ -56,6 +67,19 @@ const data = [
                   </article>`);
   return $tweet;
  }
+
+ const timeStamp = function(time) {
+   return Date(time);
+ }
+
+
+ const renderTweets = function(tweets) {
+  for (const tweet of tweets) {
+    const $output = createTweetElement(tweet)
+    $('#tweets-container').append($output);
+  }
+ };
+
 
  renderTweets(data);
 });
