@@ -5,6 +5,13 @@
  */
 
 $(document).ready(function() {
+
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const loadTweets = function () {
     $.ajax({
       url: "/tweets",
@@ -30,7 +37,6 @@ $(document).ready(function() {
       method: "POST",
       data 
       }).then(function(data) {
-        // $('tweet-text').replaceWith(loadTweets())
         loadTweets();
       })
     }
@@ -52,7 +58,7 @@ $(document).ready(function() {
                       <span>${tweet.user.name}</span>
                       <span class="name">@SirIsaac</span>
                     </header>
-                    <div>${tweet.content.text}</div>
+                    <div>${escape(tweet.content.text)}</div>
                     <footer>
                       <span> ${timeStamp(tweet.created_at)}</span>
                       <span>
