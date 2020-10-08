@@ -1,14 +1,17 @@
+
 nav {
   display: flex;
   justify-content: space-between; 
   align-content: flex-end;
   box-sizing: border-box;
-  background-color: #4056A1;
+  background-color: #006aeb;
+  background-image: url("https://www.transparenttextures.com/patterns/knitted-sweater.png");
   color: #FFFFFF;
   height: 120px;
   width: 100%;
   padding: 1.5em;
   position: fixed;
+  margin-top: 0;
 }
 
 .title {
@@ -23,12 +26,13 @@ nav {
 }
 
 nav button {
-  background-color: #4056A1;
+  background-color:  #006aeb;
+  background-image: url("https://www.transparenttextures.com/patterns/knitted-sweater.png");
   color: #FFFFFF;
   border: none;
 }
 nav button:hover {
-  color: #4056A1;
+  color:  #006aeb;
   background-color: #FFFFFF;
 }
 
@@ -45,5 +49,21 @@ nav button:hover {
   }
   50% {
     transform: translateY(150%);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+    background-image: none;
+  }
+  nav button {
+    background-color: #4056A1;
+    background-image: none;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row;
   }
 }

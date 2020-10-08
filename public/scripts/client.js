@@ -81,14 +81,17 @@ $(document).ready(function() {
    return Date(time);
  }
 
-
+ let showSubmitTweets = false;
  $('.compose').click(function(event) {
-    if ( $('.new-tweet').hasClass("up")) {
-      $('.new-tweet').slideDown().removeClass('up');
+    if (showSubmitTweets) {
+      $('.new-tweet').slideDown();
+      showSubmitTweets = false;
+      //$('#tweets-container').css('margin-top', '0px');
     } else {
-      $('.new-tweet').slideUp().addClass('up');
+      $('.new-tweet').slideUp();
+      showSubmitTweets = true;
+      //$('#tweets-container').css('margin-top', '150px');
     }
-  
  })
 
 });

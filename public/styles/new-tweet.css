@@ -50,3 +50,24 @@ form div {
   padding: 0.5em;
   margin-top: 30px;
 }
+
+@media only screen and (min-width: 1024px) {
+
+  form {
+    padding: 2vw;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .error {
+    display: none;
+    float: right;
+    width: 80%;
+    color: red;
+    border: 3px solid red;
+    padding: 0.5em;
+    margin-top: 50px;
+    margin-right: 5vw;
+  }
+  
+}
