@@ -22,7 +22,24 @@ nav {
   align-items: center;
 }
 
+nav button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: none;
+}
+
 .arrow {
   color: red;
-  font-family: "Sans Serif"
+  font-family: "Sans Serif";
+  animation: upDown 3s ease infinite;
+  position: absolute;
+}
+
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(150%);
+  }
 }

@@ -81,5 +81,9 @@ $(document).ready(function() {
    return Date(time);
  }
 
+ const newTweet = function() {
+   
+ }
+
 });
 
