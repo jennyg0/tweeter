@@ -62,7 +62,7 @@ $(document).ready(function() {
                     <header>
                       <img class="resize" src="${tweet.user.avatars}">
                       <span>${tweet.user.name}</span>
-                      <span class="name">@SirIsaac</span>
+                      <span class="name">${tweet.user.handle}</span>
                     </header>
                     <div>${escape(tweet.content.text)}</div>
                     <footer>
@@ -81,9 +81,15 @@ $(document).ready(function() {
    return Date(time);
  }
 
- const newTweet = function() {
-   
- }
+
+ $('.compose').click(function(event) {
+    if ( $('.new-tweet').hasClass("up")) {
+      $('.new-tweet').slideDown().removeClass('up');
+    } else {
+      $('.new-tweet').slideUp().addClass('up');
+    }
+  
+ })
 
 });
 

@@ -27,6 +27,10 @@ nav button {
   color: #FFFFFF;
   border: none;
 }
+nav button:hover {
+  color: #4056A1;
+  background-color: #FFFFFF;
+}
 
 .arrow {
   color: red;
