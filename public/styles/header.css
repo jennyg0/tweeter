@@ -1,7 +1,6 @@
 body > header {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;  */
   align-items: center;
   background-color: #006aeb;
   background-image: url("https://www.transparenttextures.com/patterns/knitted-sweater.png");
@@ -14,13 +13,10 @@ body > header {
 @media only screen and (min-width: 1024px) {
 
   body > header {
-    
     width: 80vw;
     margin-top: 200px;
     margin-left: 25px;
     margin-right: 5px;
-  
-    
   }
   
 }

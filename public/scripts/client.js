@@ -44,6 +44,8 @@ $(document).ready(function() {
       data 
       }).then(function(data) {
         loadTweets();
+        $('#tweet-text').val('')
+        $('#tweet-text').siblings().children('.counter').text('140')
       })
     }
     })
@@ -80,6 +82,7 @@ $(document).ready(function() {
  const timeStamp = function(time) {
    return Date(time);
  }
+
 
  let showSubmitTweets = false;
  $('.compose').click(function(event) {
