@@ -25,11 +25,17 @@ $(document).ready(function() {
 
   $('form').submit(function(event) {
     event.preventDefault();
+    $('.error').slideUp();
+    const triangle = '<i class="fas fa-exclamation-triangle"></i>';
     const tweetLength = $('#tweet-text').val().length
       if (tweetLength > 140) {
-      alert("This tweet is too long!");
+        const errorText = `${triangle}This tweet is too long!${triangle}`;
+        $('.error').html(errorText);
+        $('.error').slideDown();
      } else if (tweetLength === 0) {
-      alert("You need to type something to tweet!");
+        const errorText = `${triangle}You need to type something to tweet!${triangle}`;
+        $('.error').html(errorText);
+        $('.error').slideDown();
      } else {
        const data = $(this).serialize();
       $.ajax({
