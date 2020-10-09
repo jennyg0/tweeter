@@ -17,7 +17,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 ## Photos
-!["Screenshot of example error message"] (https://github.com/jennyg0/tweeter/blob/master/public/images/error.jpeg?raw=true)
+!["Screenshot of example error message"] (https://github.com/jennyg0/tweeter/blob/master/public/images/error.jpeg)
 
 !["Screenshot of input area hidden"] (https://github.com/jennyg0/tweeter/blob/master/public/images/hide-input.jpeg?raw=true)
 
