@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Photos
+!["Screenshot of example error message"]https://github.com/jennyg0/tweeter/blob/master/public/images/error.jpeg?raw=true
+!["Screenshot of input area hidden"]https://github.com/jennyg0/tweeter/blob/master/public/images/hide-input.jpeg?raw=true
+!["Screenshot of responsive design for large screens"]https://github.com/jennyg0/tweeter/blob/master/public/images/large-screen.jpeg?raw=true
