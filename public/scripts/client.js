@@ -87,7 +87,8 @@ $(document).ready(function() {
 
  //changes the time to a date
  const timeStamp = function(time) {
-   return Date(time);
+   let date = new Date(time).toUTCString().slice(0,16);
+   return date;
  }
 
  //toggle the new tweet form when pressing the 'write new tweet' button
@@ -95,6 +96,7 @@ $(document).ready(function() {
  $('.compose').click(function(event) {
     if (showSubmitTweets) {
       $('.new-tweet').slideDown();
+      $('#tweet-text').focus();
       showSubmitTweets = false;
     } else {
       $('.new-tweet').slideUp();

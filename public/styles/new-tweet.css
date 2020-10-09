@@ -46,10 +46,10 @@ form div {
 .error {
   display: none;
   color: red;
-  border: 3px solid red;
   margin-top: 30px;
-  
+  text-align: center;
 }
+
 
 @media only screen and (min-width: 1024px) {
 
@@ -64,7 +64,6 @@ form div {
     float: right;
     width: 80%;
     color: red;
-    border: 3px solid red;
     padding: 0.5em;
     margin-top: 50px;
     margin-right: 5vw;

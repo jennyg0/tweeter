@@ -58,6 +58,8 @@ article:hover header .name {
   
   .container {
     padding-top: 150px;
+    margin-right: 3vw;
+    margin-left: 3vw;
   }
 
 }
