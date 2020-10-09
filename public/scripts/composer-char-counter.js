@@ -1,3 +1,4 @@
+//change counter value depending on length of tweet input
 $(document).ready(function() {
   $('#tweet-text').on('input', function() {
     let charLength = $(this).val().length;

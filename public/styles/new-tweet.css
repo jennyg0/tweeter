@@ -47,8 +47,8 @@ form div {
   display: none;
   color: red;
   border: 3px solid red;
-  padding: 0.5em;
   margin-top: 30px;
+  
 }
 
 @media only screen and (min-width: 1024px) {

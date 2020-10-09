@@ -6,6 +6,7 @@
 
 $(document).ready(function() {
 
+  //function to prevent cross-site scripting
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -23,20 +24,22 @@ $(document).ready(function() {
   
   loadTweets();
 
+  //submit tweet on click
   $('form').submit(function(event) {
     event.preventDefault();
     $('.error').slideUp();
     const triangle = '<i class="fas fa-exclamation-triangle"></i>';
-    const tweetLength = $('#tweet-text').val().length
+    const tweetLength = $('#tweet-text').val().length;
+    //check for tweet input over 140characters or empty, then show error
       if (tweetLength > 140) {
         const errorText = `${triangle}This tweet is too long!${triangle}`;
         $('.error').html(errorText);
         $('.error').slideDown();
-     } else if (tweetLength === 0) {
+     } else if (tweetLength === 0) { 
         const errorText = `${triangle}You need to type something to tweet!${triangle}`;
         $('.error').html(errorText);
         $('.error').slideDown();
-     } else {
+     } else { //if no error, post tweet 
        const data = $(this).serialize();
       $.ajax({
       url: "/tweets",
@@ -44,21 +47,24 @@ $(document).ready(function() {
       data 
       }).then(function(data) {
         loadTweets();
-        $('#tweet-text').val('')
-        $('#tweet-text').siblings().children('.counter').text('140')
+        //clear input and set counter back at 140
+        $('#tweet-text').val('');
+        $('#tweet-text').siblings().children('.counter').text('140');
       })
     }
     })
   
 
  const renderTweets = function(tweets) {
+  //clear the container so tweets don't double post upon submit
   $('#tweets-container').html("");
   for (const tweet of tweets) {
-    const $output = createTweetElement(tweet)
+    const $output = createTweetElement(tweet);
     $('#tweets-container').prepend($output);
   }
  };
 
+ //creates the html for the tweet
  const createTweetElement = function(tweet) {
   const $tweet = $(`<article>
                     <header>
@@ -79,21 +85,20 @@ $(document).ready(function() {
   return $tweet;
  }
 
+ //changes the time to a date
  const timeStamp = function(time) {
    return Date(time);
  }
 
-
+ //toggle the new tweet form when pressing the 'write new tweet' button
  let showSubmitTweets = false;
  $('.compose').click(function(event) {
     if (showSubmitTweets) {
       $('.new-tweet').slideDown();
       showSubmitTweets = false;
-      //$('#tweets-container').css('margin-top', '0px');
     } else {
       $('.new-tweet').slideUp();
       showSubmitTweets = true;
-      //$('#tweets-container').css('margin-top', '150px');
     }
  })
 

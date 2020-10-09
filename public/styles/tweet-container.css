@@ -35,13 +35,13 @@ footer {
   justify-content: space-between;
   border-top: 3px solid #545149;
   margin-top: 20px;
+  width: 100%;
   padding: 1em;
   font-size: 0.6em;
 }
 
 article div {
   margin-top: 10px;
-  padding: .5em;
 }
 
 article:hover {
@@ -53,19 +53,11 @@ article:hover header .name {
   color:  #4056A1;
   opacity: 0.5;
 }
-.container {
-  padding: 0;
-  margin-top: 0;
-}
-
-
 
 @media only screen and (min-width: 1024px) {
   
   .container {
     padding-top: 150px;
   }
-
- 
 
 }
